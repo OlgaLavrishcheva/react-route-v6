@@ -1,43 +1,52 @@
-//не видно содержания дочерних элементов
 import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
+    BrowserRouter,
+    Routes,
+    Route,
+    Link,
+    Outlet
 } from "react-router-dom";
 
+
 function App() {
-  return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Users />} />
-        </Routes>
-      </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="users" element={<Users/>}/>
+                <Route path="userProfile" element={<UserProfile/>}/>
+                <Route path="ownUserProfile" element={<OwnUserProfile/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+function Home() {
+    return (
+        <div>
+            <nav>
+                <Link to="/">Home!</Link>
+                <Link to="Users">My Users!</Link>
+                <Link to="UserProfile">UserProfile!</Link>
+                <Link to="OwnUserProfile">OwnUserProfile!</Link>
+            </nav>
+
+            <Outlet/>
+        </div>
+    );
 }
 
 function Users() {
-  return (
-      <div>
-          <h1>Home page</h1>
-        <nav>
-          <Link to="me">My Users</Link>
-          <Link to="UserProfile">My UserProfile</Link>
-          <Link to="OwnUserProfile">My OwnUserProfile</Link>
-        </nav>
-
-        <Routes>
-          <Route path=":id" element={<UserProfile />} />
-          <Route path="me" element={<OwnUserProfile />} />
-        </Routes>
-      </div>
-  );
+    return (
+        <div>
+            <h2>_My_Users_</h2>
+        </div>
+    );
 }
 
 function UserProfile() {
     return (
         <div>
-            <h2>UserProfile</h2>
+            <h2>_UserProfile_</h2>
         </div>
     );
 }
@@ -45,7 +54,7 @@ function UserProfile() {
 function OwnUserProfile() {
     return (
         <div>
-            <h2>OwnUserProfile</h2>
+            <h2>_OwnUserProfile_</h2>
         </div>
     );
 }
