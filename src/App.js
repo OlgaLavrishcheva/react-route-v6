@@ -22,12 +22,12 @@ function App() {
 
 function Home() {
     return (
-        <div>
+        <div style={{backgroundColor: "#023c5d", padding: "30px"}}>
             <nav>
-                <Link to="/">Home!</Link>
-                <Link to="Users">My Users!</Link>
-                <Link to="UserProfile">UserProfile!</Link>
-                <Link to="OwnUserProfile">OwnUserProfile!</Link>
+                <Link style={{color: "white", margin: "10px"}} to="/">Home!</Link>
+                <Link style={{color: "white", margin: "10px"}} to="Users">My Users!</Link>
+                <Link style={{color: "white", margin: "10px"}} to="UserProfile">UserProfile!</Link>
+                <Link style={{color: "white", margin: "10px"}} to="OwnUserProfile">OwnUserProfile!</Link>
             </nav>
 
             <Outlet/>
