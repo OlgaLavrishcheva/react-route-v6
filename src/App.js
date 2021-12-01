@@ -5,14 +5,18 @@ import {
     Link,
     Outlet
 } from "react-router-dom";
-
+import UserProfile from "./UserProfile";
+import OwnUserProfile from "./OwnUserProfile";
+import {UserPage, Users, UsersPage} from "./Users";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="users" element={<Users/>}/>
+                <Route path="user/:userId" element={<UserPage/>}/>
+                <Route path="users1" element={<UsersPage/>}/>
+                <Route path="Users" element={<Users/>}/>
                 <Route path="userProfile" element={<UserProfile/>}/>
                 <Route path="ownUserProfile" element={<OwnUserProfile/>}/>
             </Routes>
@@ -31,30 +35,6 @@ function Home() {
             </nav>
 
             <Outlet/>
-        </div>
-    );
-}
-
-function Users() {
-    return (
-        <div>
-            <h2>_My_Users_</h2>
-        </div>
-    );
-}
-
-function UserProfile() {
-    return (
-        <div>
-            <h2>_UserProfile_</h2>
-        </div>
-    );
-}
-
-function OwnUserProfile() {
-    return (
-        <div>
-            <h2>_OwnUserProfile_</h2>
         </div>
     );
 }
